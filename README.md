@@ -19,14 +19,14 @@ Brandon's personal Kanban board - migrated from local Node.js to GitHub Pages + 
 ### 1. Create Supabase Tables
 ```bash
 # Go to Supabase SQL Editor
-open https://supabase.com/dashboard/project/gbtwdwsrtblsbcbiabkl/sql/new
+open https://supabase.com/dashboard (SQL Editor)
 
 # Copy schema.sql contents and run it in the SQL editor
 ```
 
 ### 2. Migrate Your Data
 ```bash
-cd /Users/clawdbot/clawd/kanban-v2
+cd ./
 npm install
 node migrate-data.js
 ```
@@ -122,7 +122,7 @@ node migrate-schema.js
 
 ## Migration from V1
 
-Your original Kanban (V1) at `/Users/clawdbot/clawd/kanban/` is **untouched**.
+Your original Kanban (V1) at `../kanban/` is **untouched**.
 
 - V1 still runs on `localhost:8899`
 - V2 runs on `https://fitfocusmedia.github.io/brandon-kanban-v2/`

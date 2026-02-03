@@ -3,7 +3,7 @@
 ## Quick Start (Brandon - Do These Steps)
 
 ### Step 1: Create Supabase Tables (5 minutes)
-1. Go to Supabase SQL Editor: https://supabase.com/dashboard/project/gbtwdwsrtblsbcbiabkl/sql/new
+1. Go to Supabase SQL Editor: https://supabase.com/dashboard (SQL Editor)
 2. Copy the entire contents of `schema.sql` in this repo
 3. Paste into the SQL editor
 4. Click **Run** (or press Cmd+Enter)
@@ -11,7 +11,7 @@
 
 ### Step 2: Migrate Your Data (2 minutes)
 ```bash
-cd /Users/clawdbot/clawd/kanban-v2
+cd ./
 node migrate-data.js
 ```
 

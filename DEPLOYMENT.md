@@ -18,15 +18,15 @@ Repository: **https://github.com/FitFocusMedia/brandon-kanban-v2** (private)
 
 **Why:** The database tables need to be created before we can migrate data.
 
-1. Go to: https://supabase.com/dashboard/project/gbtwdwsrtblsbcbiabkl/sql/new
-2. Copy the entire contents of `/Users/clawdbot/clawd/kanban-v2/schema.sql`
+1. Go to: https://supabase.com/dashboard (SQL Editor)
+2. Copy the entire contents of `.//schema.sql`
 3. Paste into the SQL editor
 4. Click **Run** (or press Cmd+Enter)
 5. You should see "Success. No rows returned"
 
 **Verify it worked:**
 ```bash
-cd /Users/clawdbot/clawd/kanban-v2
+cd ./
 node migrate-schema.js
 ```
 You should see ✅ for all tables.
@@ -38,7 +38,7 @@ You should see ✅ for all tables.
 **Why:** Copy all your existing tasks, clients, projects, etc. from V1 to V2.
 
 ```bash
-cd /Users/clawdbot/clawd/kanban-v2
+cd ./
 node migrate-data.js
 ```
 
@@ -48,7 +48,7 @@ You'll see:
 - 📜 Migrating activity log...
 - ... etc.
 
-**This is safe** — your original Kanban at `/Users/clawdbot/clawd/kanban/` is untouched.
+**This is safe** — your original Kanban at `../kanban/` is untouched.
 
 ---
 
@@ -125,7 +125,7 @@ npm run deploy
 ### "Module not found" errors
 ```bash
 # Reinstall dependencies
-cd /Users/clawdbot/clawd/kanban-v2
+cd ./
 npm install
 ```
 
@@ -137,9 +137,9 @@ npm install
 |----------|-----|
 | **Live Site** | https://fitfocusmedia.github.io/brandon-kanban-v2/ |
 | **GitHub Repo** | https://github.com/FitFocusMedia/brandon-kanban-v2 |
-| **Supabase Dashboard** | https://supabase.com/dashboard/project/gbtwdwsrtblsbcbiabkl |
-| **SQL Editor** | https://supabase.com/dashboard/project/gbtwdwsrtblsbcbiabkl/sql/new |
-| **Table Editor** | https://supabase.com/dashboard/project/gbtwdwsrtblsbcbiabkl/editor |
+| **Supabase Dashboard** | https://supabase.com/dashboard |
+| **SQL Editor** | https://supabase.com/dashboard (SQL Editor) |
+| **Table Editor** | https://supabase.com/dashboard (Table Editor) |
 | **Local Dev** | http://localhost:3000 (when running `npm run dev`) |
 | **V1 Kanban** | http://localhost:8899 (original, untouched) |
 
@@ -203,7 +203,7 @@ npm install
 
 ```bash
 # Setup (one-time)
-cd /Users/clawdbot/clawd/kanban-v2
+cd ./
 npm install
 node migrate-data.js
 

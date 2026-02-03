@@ -2,7 +2,7 @@
 
 **Status:** Ready for deployment (awaiting database setup)
 **Time:** 1 hour build time
-**Location:** `/Users/clawdbot/clawd/kanban-v2/`
+**Location:** `.//`
 **Repo:** https://github.com/FitFocusMedia/brandon-kanban-v2 (private)
 
 ---
@@ -41,7 +41,7 @@
 ### Step 1: Create Database Tables (2 min)
 ```bash
 # 1. Open Supabase SQL Editor
-open https://supabase.com/dashboard/project/gbtwdwsrtblsbcbiabkl/sql/new
+open https://supabase.com/dashboard (SQL Editor)
 
 # 2. Copy contents of schema.sql
 # 3. Paste into SQL editor
@@ -50,7 +50,7 @@ open https://supabase.com/dashboard/project/gbtwdwsrtblsbcbiabkl/sql/new
 
 ### Step 2: Migrate Your Data (1 min)
 ```bash
-cd /Users/clawdbot/clawd/kanban-v2
+cd ./
 node migrate-data.js
 ```
 
@@ -95,7 +95,7 @@ Then visit: **https://fitfocusmedia.github.io/brandon-kanban-v2/**
 ## Important Notes
 
 ### ✅ Original Kanban Untouched
-- `/Users/clawdbot/clawd/kanban/` is exactly as it was
+- `../kanban/` is exactly as it was
 - V1 still works on localhost:8899
 - V2 is a completely separate system
 - Both can run simultaneously
@@ -136,7 +136,7 @@ kanban-v2/
 
 ```bash
 # One-time setup
-cd /Users/clawdbot/clawd/kanban-v2
+cd ./
 npm install
 node migrate-data.js
 
@@ -196,8 +196,8 @@ After deployment works:
 
 - **Live Site:** https://fitfocusmedia.github.io/brandon-kanban-v2/
 - **GitHub Repo:** https://github.com/FitFocusMedia/brandon-kanban-v2
-- **Supabase Dashboard:** https://supabase.com/dashboard/project/gbtwdwsrtblsbcbiabkl
-- **SQL Editor:** https://supabase.com/dashboard/project/gbtwdwsrtblsbcbiabkl/sql/new
+- **Supabase Dashboard:** https://supabase.com/dashboard
+- **SQL Editor:** https://supabase.com/dashboard (SQL Editor)
 
 ---
 
