@@ -822,7 +822,7 @@
 
     <script>
         // Initialize Supabase
-        const supabase = supabase.createClient(
+        const supabaseClient = window.supabase.createClient(
             KANBAN_CONFIG.supabase.url,
             KANBAN_CONFIG.supabase.anonKey
         );
@@ -1181,10 +1181,10 @@
                 console.log('📥 Loading data from Supabase...');
                 
                 const [tasksData, clientsData, projectsData, revenueData] = await Promise.all([
-                    supabase.from('tasks').select('*').order('created_at', { ascending: false }),
-                    supabase.from('clients').select('*').order('name'),
-                    supabase.from('projects').select('*').order('name'),
-                    supabase.from('revenue').select('*').order('date', { ascending: false })
+                    supabaseClient.from('tasks').select('*').order('created_at', { ascending: false }),
+                    supabaseClient.from('clients').select('*').order('name'),
+                    supabaseClient.from('projects').select('*').order('name'),
+                    supabaseClient.from('revenue').select('*').order('date', { ascending: false })
                 ]);
 
                 if (tasksData.error) console.error('Tasks error:', tasksData.error);
@@ -1355,7 +1355,7 @@
             };
 
             try {
-                const { error } = await supabase.from('tasks').insert([newTask]);
+                const { error } = await supabaseClient.from('tasks').insert([newTask]);
                 if (error) throw error;
 
                 await loadData();
@@ -1387,7 +1387,7 @@
             };
 
             try {
-                const { error } = await supabase.from('revenue').insert([newRevenue]);
+                const { error } = await supabaseClient.from('revenue').insert([newRevenue]);
                 if (error) throw error;
 
                 await loadData();
@@ -1418,7 +1418,7 @@
             };
 
             try {
-                const { error } = await supabase.from('clients').insert([newClient]);
+                const { error } = await supabaseClient.from('clients').insert([newClient]);
                 if (error) throw error;
 
                 await loadData();
@@ -1685,7 +1685,7 @@
                 const task = tasks.find(t => t.id === timerTaskId);
                 if (task) {
                     const timeTracked = (task.time_tracked || 0) + Math.floor(timerSeconds / 60);
-                    supabase.from('tasks').update({ time_tracked: timeTracked }).eq('id', timerTaskId);
+                    supabaseClient.from('tasks').update({ time_tracked: timeTracked }).eq('id', timerTaskId);
                 }
             }
 
